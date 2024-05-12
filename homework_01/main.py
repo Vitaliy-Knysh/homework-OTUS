@@ -40,10 +40,9 @@ def filter_numbers(numbers, fltr):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    match fltr:
-        case "odd":
-            return [*filter(lambda x: x % 2 == 1, numbers)]
-        case "even":
-            return [*filter(lambda x: x % 2 == 0, numbers)]
-        case "prime":
-            return [*filter(is_prime, numbers)]
+    if fltr == ODD:
+        return [*filter(lambda x: x % 2 == 1, numbers)]
+    elif fltr == EVEN:
+        return [*filter(lambda x: x % 2 == 0, numbers)]
+    elif fltr == PRIME:
+        return [*filter(is_prime, numbers)]
