@@ -17,6 +17,6 @@ class Vehicle(ABC):
 
     def move(self, distance):
         fuel_cost = distance * self.fuel_consumption
-        if fuel_cost < self.fuel:
+        if fuel_cost <= self.fuel:
             self.fuel -= fuel_cost
         else: raise exceptions.NotEnoughFuel()
